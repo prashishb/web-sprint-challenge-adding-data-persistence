@@ -1,8 +1,10 @@
 const express = require('express');
+const projectsRouter = require('./project/router');
 
 const server = express();
 
 server.use(express.json());
+server.use('/api/projects', projectsRouter);
 
 //eslint-disable-next-line
 server.use((err, req, res, next) => {
